@@ -7,7 +7,8 @@
   <body>
     <h1><%= title %></h1>
     <h2>Select the topic you are interested in, then click "Generate!" to create iCalendar file (*.ics)</h2>
-    <div id="url-ics-file"></div>
+    <div class="url-ics-file"></div>
+    </br>
     <input type="button" class="gen-ics-file" value="Generate!">
     </br>
     <% for (var i = 0; i < ssnData.length; i += 1) { %>
@@ -18,6 +19,8 @@
     <% } %>
     </br>
     <input type="button" class="gen-ics-file" value="Generate!">
+    </br>
+    <div class="url-ics-file"></div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/js/gen.js"></script>

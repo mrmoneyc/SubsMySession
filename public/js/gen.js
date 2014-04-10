@@ -17,7 +17,7 @@ $(document).ready( function () {
         sid: chkSSNData
       },
       success: function (data) {
-        $('#url-ics-file').html('<a href="' + data.url + '">' + data.url + '</a>');
+        $('.url-ics-file').html('<a href="' + data.url + '">' + data.url + '</a> <<= Copy this link and paste to your calendar to <a href="https://support.google.com/calendar/answer/37118" target="_blank">import</a> the selected schedule');
       },
       error: function (err) {
         console.log(err);
