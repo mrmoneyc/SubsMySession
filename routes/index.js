@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
       ssnData = [];
     }
     else {
-      console.dir(data);
+      //console.dir(data);
       ssnData = data;
     }
 
