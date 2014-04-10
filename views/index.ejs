@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Select the topic you are interested in, then click "Generate!" to create iCalendar file (*.ics)</h2>
+    <div id="url-ics-file"></div>
+    <input type="button" class="gen-ics-file" value="Generate!">
+    </br>
+    <% for (var i = 0; i < ssnData.length; i += 1) { %>
+      <% if (i % 3 === 0) { %>
+        <h3><%= ssnData[i].dtStart.replace('T', ' ').replace(':00+08:00','') %> ~ <%= ssnData[i].dtEnd.replace('T', ' ').replace(':00+08:00','') %></h3>
+      <% } %>
+      <input type="checkbox" name="chk-ssn[]" id="<%= ssnData[i].sid %>" value="<%= ssnData[i].sid %>" /><%= ssnData[i].title %> @ <%= ssnData[i].location %> by <%= ssnData[i].desc %></br>
+    <% } %>
+    </br>
+    <input type="button" class="gen-ics-file" value="Generate!">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/gen.js"></script>
+  </body>
+</html>
