@@ -37,20 +37,19 @@ router.get('/', function(req, res) {
 
 router.post('/gencal', function (req, res) {
   var qCondition = req.param('sid');
-  console.log(qCondition);
   var lstEvent = [];
   var tNow = (new Date()).getTime();
 
   var cal = vobj.calendar();
   cal.setMethod('REQUEST');
 
-  console.log(typeof qCondition);
+  //console.log(typeof qCondition);
   clt.ssn.find({ sid: { $in: qCondition }}).sort({ _sid: 1 }).toArray( function (err, data) {
     if (!data) {
       console.log('DATA CANNOT FOUND :: ', err);
     }
     else {
-      console.dir(data);
+      //console.dir(data);
       lstEvent = data;
 
       for (var i = 0; i < lstEvent.length; i += 1) {
